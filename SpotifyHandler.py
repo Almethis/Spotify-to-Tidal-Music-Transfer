@@ -72,9 +72,7 @@ def request_tracks(access_token, playlist_id, offset = 0 ):
     tracks_response = requests.get(tracks_url, params=params ,headers=access_token)
     tracks = tracks_response.json()
 
-    #data[playlist_name] = tracks
-    #print("\nBuilding playlist: ", playlist_name)
-
+  
     return tracks
 
 
