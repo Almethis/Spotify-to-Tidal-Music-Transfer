@@ -1,0 +1,5 @@
+tidalapi
+fuzzywuzzy
+requests
+base64
+json
