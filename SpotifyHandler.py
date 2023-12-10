@@ -57,6 +57,34 @@ def request_all_playlist(access_token, user_id):
     return playlist
 
 
+def get_playlist(access_token, playlistid):
+
+    playlist_url = f"https://api.spotify.com/v1/playlists/{playlistid}"
+
+    playlist_response = requests.get(playlist_url, headers=access_token)
+
+    playlists_json = playlist_response.json()
+
+    playlist = {}
+
+    for x in range(len(playlists_json["items"])):
+        playlist[playlists_json["items"][x]["name"]] = playlists_json["items"][x]["id"]
+
+
+    return playlist
+
+
+def get_playlist_name(access_token, playlistid):
+    playlist_url = f"https://api.spotify.com/v1/playlists/{playlistid}"
+
+    playlist_response = requests.get(playlist_url, headers=access_token)
+
+    playlists_json = playlist_response.json()
+
+    return playlists_json["name"]
+
+
+    
 
 
 
@@ -72,7 +100,9 @@ def request_tracks(access_token, playlist_id, offset = 0 ):
     tracks_response = requests.get(tracks_url, params=params ,headers=access_token)
     tracks = tracks_response.json()
 
-  
+    #data[playlist_name] = tracks
+    #print("\nBuilding playlist: ", playlist_name)
+
     return tracks
 
 
