@@ -1,16 +1,25 @@
-# Spotify to Tidal Music Transfer
-Transfers your playlist from Spotify to Tidal! No paywall included.
+# Spotify to Tidal Music Transfer Version 1.0
 
 
+Transfers all your playlist or indivdual public playlist! (These can even be Artist Radios)
+
+Playlist IDs can be found via the web browser! 
+
+Ex: https://open.spotify.com/playlist/05mbSA2U0bQ1DqF84eQBBH
+
+Our playlist id is: 05mbSA2U0bQ1DqF84eQBBH
+
+
+# Requirements
 You will need the following python libaries:
 
+```
 tidalapi
-
+fuzzywuzzy
 requests
-
-base54
-
+base64
 json
+```
 
 They can all be easily installed with pip. ``pip install xxx ``
 
